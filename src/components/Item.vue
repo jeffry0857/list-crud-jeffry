@@ -1,12 +1,13 @@
 <template>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-  <li>
-      <label>
-        <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)" />
-        <span>{{ todo.title }}</span>
-      </label>
-      <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red" @click="handleDelete(todo.id)">Delete</button>
-    </li>
+  <li class="todo-item">
+    <div class="todo-item-left">
+      <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)" />
+      <span class="todo-item-title">{{ todo.title }}</span>
+    </div>
+    <button class="btn" @click="handleDelete(todo.id)">
+      <i class="fas fa-trash"></i>
+    </button>
+  </li>
 </template>
 
 <script>
@@ -27,6 +28,23 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .todo-item {
+    padding: 2vh 0 2vh 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+    input:checked {
+      background-size: 10px;
+      border: 1px solid var(--checkbox-color);
+      background-color: var(--checkbox-color)
+    }
+    span {
+      margin-left: 1vh;
+    }
+  }
 </style>

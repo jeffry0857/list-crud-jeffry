@@ -1,7 +1,10 @@
 <template>
-  <div class="flex justify-between">
-    <input type="text" placeholder="Enter your itinerary" v-model="title">
-    <button @click="add()">Add</button>
+  <div class="add-row">
+    <input class="input-todo" type="text" placeholder="Enter your itinerary" v-model="title">
+    <button class="btn" @click="add()">
+      <i class="fas fa-plus"></i>
+    </button>
+    
   </div>
 </template>
 
@@ -26,6 +29,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .add-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+  }
 
+  .input-todo {
+    width: 55%;
+  }
+
+  ::placeholder {
+  padding-left: 2vh;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <ul class="todo-main">
+  <ul class="todo-main text-sm mt-6 ">
     <Item 
       v-for="todoObj in todos" 
       :key="todoObj.id" 
@@ -16,12 +16,3 @@ export default {
   props: ['todos', 'checkTodo', 'deleteTodo']
 }
 </script>
-
-<style scoped>
-  .todo-main {
-    margin-left: 0;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    padding: 0;
-  }
-</style>
