@@ -2,9 +2,13 @@
 
 /* variables */
 :root {
-  --primary: #4f515a;
-  --secondary: #ebebeb;
-  --warning: #da0f41;
+  --pink: #c05cae;
+  --white: #ebebeb;
+  --brown: #b62626;
+  --checkbox-color: rgb(202, 60, 60);
+  --checkbox-shadow: rgb(238, 156, 167, 0.2);
+  --add-button: rgba(255, 255, 255, 0.7);
+  --add-button-shadow: rgba(238, 156, 167, 0.4);
 }
 
 /* base styles  */
@@ -12,60 +16,50 @@
   margin: 0;
   padding: 0;
   font-family: 'Nunito', sans-serif;
-  color: var(--primary);
-}
-body {
-  background: #fafafa;
-}
-a {
-  text-decoration: none;
+  color: var(--brown);
+  font-size: 16px;
 }
 
-/* buttons */
-button, .btn { 
-  background: var(--secondary);
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:
+  linear-gradient(62deg, rgba(7, 86, 160, 0.973) 23%, rgba(255, 122, 151, 0.5) 4%),
+  linear-gradient(44deg, rgba(0, 43, 99, 0.079) 13%, rgba(242, 140, 143, 0.5) 18%),
+  linear-gradient(118deg, rgba(84, 202, 242, 0.031) 40%, rgba(247, 155, 187, 0.5) 7%),
+  linear-gradient(58deg, rgba(7, 86, 160, 0.973) 13%, rgba(255, 122, 151, 0.5) 4%);
+  background-blend-mode: normal, lighten, multiply, hard-light;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.btn {
+  width: 15vh;
+  background: #fff;
   border-radius: 8px;
-  border: 0;
+  border: 1px #fff;
   padding: 8px 12px;
   font-weight: 600;
   cursor: pointer;
   display: inline-block;
 }
-button:hover, .btn:hover {
-  background: var(--primary);
+
+.btn:hover {
+  background: var(--pink);
   color: white;
-}
-button:disabled {
-  opacity: 0.5;
-  color: var(--primary);
-  background: var(--secondary);
-  cursor: not-allowed;
-}
-
-/* forms */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 1px 2px 3px rgba(50,50,50,0.05);
-  border: 1px solid  var(--secondary);
-  background: white;
-}
-input, textarea {
-  border: 0;
-  border-bottom: 1px solid var(--secondary);
-  padding: 10px;
-  outline: none;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  margin: 20px auto;
-}
-
-/* error text */
-.error {
-  color: var(--warning);
-  font-size: 14px;
-  margin: 16px 0;
 }

@@ -1,0 +1,53 @@
+$danger: #FF7072;
+$blue: #172c81;
+
+@mixin btn {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px #fff;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+}
+
+@mixin btn-hover {
+  background: #FF7072;
+  color: white;
+}
+
+@mixin theme-warm {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:
+  linear-gradient(62deg, rgba(7, 86, 160, 0.973) 23%, rgba(255, 122, 151, 0.5) 4%),
+  linear-gradient(44deg, rgba(0, 43, 99, 0.079) 13%, rgba(242, 140, 143, 0.5) 18%),
+  linear-gradient(118deg, rgba(84, 202, 242, 0.031) 40%, rgba(247, 155, 187, 0.5) 7%),
+  linear-gradient(58deg, rgba(7, 86, 160, 0.973) 13%, rgba(255, 122, 151, 0.5) 4%);
+  background-blend-mode: normal, lighten, multiply, hard-light;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+@mixin theme-light-weight {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:
+  linear-gradient(62deg, rgba(160, 7, 106, 0.973) 23%, rgba(122, 211, 255, 0.5) 4%),
+  linear-gradient(44deg, rgba(0, 43, 99, 0.079) 13%, rgba(242, 140, 143, 0.5) 18%),
+  linear-gradient(118deg, rgba(84, 202, 242, 0.031) 40%, rgba(247, 155, 187, 0.5) 7%),
+  linear-gradient(58deg, rgba(7, 86, 160, 0.973) 13%, rgba(255, 122, 151, 0.5) 4%);
+  background-blend-mode: normal, lighten, multiply, hard-light;
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
