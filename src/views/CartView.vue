@@ -4,15 +4,16 @@
     tag="ul"
     @before-enter="beforeEnter"
     @enter="enter"
-    class="column"
+    class="whole-content"
   >
-    <li v-for="(lecture, index) in lectures" 
-      :key="lecture.name" 
+    <li v-for="(item, index) in myCarts" 
+      :key="item.id" 
       :data-index="index"
+      :src="item.img"
       class="row"
     >
-      <h3>{{lecture.name}}</h3>
-      <div>{{lecture.city}}</div>
+      <h3>{{item.name}}</h3>
+      <img :src="item.img">
     </li>
   </transition-group>
 </template>
@@ -25,16 +26,15 @@ export default {
   components: { LoadingVue, gsap },
   data() {
     return {
-      lectures: [],
+      myCarts: [],
     }
   },
   beforeCreate() {
-    fetch('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8')
+    fetch('https://mocki.io/v1/daf45bf6-f866-410b-b4e1-6b3b70ea4110')
       .then((response) => {
-        console.log(response)
         return response.json()
       })
-      .then(res => {this.lectures = res})
+      .then(res => {this.myCarts = res})
   },
   methods: {
     beforeEnter(el) {
@@ -58,12 +58,35 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
 
-  .column {
-    @include alignCenter;
+  .whole-content {
+    display: flex;
+    justify-content:right
   }
 
   .row {
-      border: 1px solid white;
-      padding: 5vh;
+      padding: 5px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding-top: 25%;
+      @include alignCenter;
+
+      img {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      object-fit: cover;
     }
+  }
+
+  @media screen and (max-width: 480px) {
+    .whole-content {
+      display: inline-block;
+      margin: auto 0px auto 0px ;
+    }
+  }
 </style>

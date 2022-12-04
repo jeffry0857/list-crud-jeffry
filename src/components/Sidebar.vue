@@ -5,7 +5,7 @@
     </div>
     <div class="navigation-icons">
       <i class="fas fa-list-ol"></i>
-      <i class="fas fa-camera-retro"></i>
+      <i class="fas fa-shopping-cart"></i>
       <i class="fas fa-map-marker-alt"></i>
       <i class="fas fa-comment-dots"></i>
       <i class="fas fa-info-circle"></i>
