@@ -1,13 +1,14 @@
 <template>
-  <Navbar />
+  <Sidebar />
   <router-view/>
 </template>
 
 <script>
-  import Navbar from '@/components/Navbar.vue';
+  import Sidebar from './components/Sidebar.vue';
+  import LoadingVue from './components/Loading.vue';
   export default {
     name: "App",
-    components: { Navbar },
+    components: { Sidebar, LoadingVue },
   }
 </script>
 
@@ -21,5 +22,4 @@
   color: #2c3e50;
   display: flex;
 }
-
 </style>

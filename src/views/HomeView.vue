@@ -1,5 +1,4 @@
 <template>
-  <!-- <Navbar /> -->
   <div id="root">
     <div class="todo-container">
       <div class="todo-wrap">
@@ -15,11 +14,10 @@
   import Top from '@/components/Top.vue'
   import Bottom from '@/components/Bottom.vue';
   import List from '@/components/List.vue';
-  import Navbar from '@/components/Navbar.vue';
 
   export default {
     name: "Home",
-    components: { Top, Bottom, List, Navbar },
+    components: { Top, Bottom, List },
     data() {
       return {
         todos: [],
@@ -65,10 +63,6 @@
 
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
-
-body {
-  @include theme-warm
-}
 
   .todo-wrap {
   max-width: 480px;

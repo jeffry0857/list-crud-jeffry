@@ -6,7 +6,7 @@
     <div class="navigation-icons">
       <i class="fas fa-list-ol"></i>
       <i class="fas fa-camera-retro"></i>
-      <i class="fas fa-user-circle"></i>
+      <i class="fas fa-map-marker-alt"></i>
       <i class="fas fa-comment-dots"></i>
       <i class="fas fa-info-circle"></i>
     </div>
@@ -21,7 +21,11 @@
           <router-link v-show="showLink" :to="{ name: 'cart' }">
             My Cart
           </router-link>
-        </div>        
+        </div>
+        <div key="3" v-show="showLink">
+          <a href="https://jeffry0857.github.io/Ubike/UBike_Map.html">U Bike Map</a>
+        </div>
+        
       </transition-group>
     </div>
   </div>
@@ -56,6 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/main.scss";
   .container {
     position: absolute;
     top: 0;
@@ -68,9 +73,8 @@ export default {
     z-index: 999;
     transition: all .4s ease-in-out;
     .control {
-      display: flex;
+      @include alignCenter;
       justify-content: center;
-      align-items: center;
       width: 50px;
       margin-bottom: 10px;
       i {
@@ -89,9 +93,8 @@ export default {
       }
     }
     .navigation-icons {
-      display: flex;
+      @include alignCenter;
       justify-content: center;
-      align-items: center;
       flex-direction: column;
       width: 50px;
       float: left;

@@ -29,14 +29,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/scss/main.scss";
   .todo-item {
     padding: 2vh 0 2vh 0;
-    display: flex;
+    @include alignCenter;
     justify-content: space-between;
-    align-items: center;
     &-left {
-      display: flex;
-      align-items: center;
+      @include alignCenter
     }
     input:checked {
       background-size: 10px;

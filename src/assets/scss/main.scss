@@ -1,6 +1,11 @@
 $danger: #FF7072;
 $blue: #172c81;
 
+@mixin alignCenter {
+  display: flex;
+  align-items: center;
+}
+
 @mixin btn {
   background: #fff;
   border-radius: 8px;

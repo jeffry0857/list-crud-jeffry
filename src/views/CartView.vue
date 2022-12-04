@@ -1,17 +1,28 @@
 <template>
-  <div id="cart" v-for="lecture in lectures" :key="lecture.name">
-    <p>{{lecture.name}}</p>
-    <p>{{lecture.city}}</p>
-  </div>
+  <transition-group
+    appear
+    tag="ul"
+    @before-enter="beforeEnter"
+    @enter="enter"
+    class="column"
+  >
+    <li v-for="(lecture, index) in lectures" 
+      :key="lecture.name" 
+      :data-index="index"
+      class="row"
+    >
+      <h3>{{lecture.name}}</h3>
+      <div>{{lecture.city}}</div>
+    </li>
+  </transition-group>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import Spinner from '@/components/Spinner.vue'
-
+import LoadingVue from '@/components/Loading.vue'
+import gsap from 'gsap'
 export default {
   name: 'CartView',
-  components: { Navbar, Spinner },
+  components: { LoadingVue, gsap },
   data() {
     return {
       lectures: [],
@@ -24,13 +35,35 @@ export default {
         return response.json()
       })
       .then(res => {this.lectures = res})
+  },
+  methods: {
+    beforeEnter(el) {
+      el.style.opacity = 0
+      el.style.transform = 'translateY(100px)'
+    },
+    enter(el, done) {
+      gsap.to(el, {
+        duration: 0.8,
+        y: 0,
+        opacity: 1,
+        ease: 'bounce.out',
+        onComplete: done,
+        delay: el.dataset.index * 0.2
+      })
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/main.scss";
-body {
-  @include theme-light-weight
-}
+
+  .column {
+    @include alignCenter;
+  }
+
+  .row {
+      border: 1px solid white;
+      padding: 5vh;
+    }
 </style>
